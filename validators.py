@@ -5,15 +5,6 @@ from django.core.exceptions import ImproperlyConfigured
 import math
 
 #! and if is multiple?
-
-#class FileExtensionValidator(allowed_mimes, message, code)
-
-#def validate_even(value):
-    #if value % 2 != 0:
-        #raise ValidationError(
-            #_('%(value)s is not an even number'),
-            #params={'value': value},
-        #)
         
 
 @deconstructible
@@ -40,7 +31,6 @@ class MimeValidator:
 
     def __call__(self, value):
         # for uploadfile
-        print('validator value: ' +str(value))
         mime = value.content_type.lower()
         if self.allowed_mimes is not None and mime not in self.allowed_mimes:
             raise ValidationError(
